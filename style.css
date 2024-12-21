@@ -1,0 +1,1328 @@
+/* General Reset */
+body, ul, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Links */
+/* Button Styling */
+button {
+  background-color: transparent; /* Transparent background */
+  color: #ececec; /* Coral color for text */
+  border: 2px solid #ffffff; /* Coral border */
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners */
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #000000; /* Coral background on hover */
+  color: white; /* Text color turns white on hover */
+  border-color: #ffffff; /* Border stays the same color as the background */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Slight shrink effect on click */
+}
+
+button:focus {
+  outline: 2px solid #ffc7c2; /* Light coral outline for focus */
+  outline-offset: 2px;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: transparent; /* Initially transparent */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a {
+  font-weight: bold;
+  color: rgb(251, 251, 251); /* Black text by default */
+  transition: color 0.3s ease;
+}
+
+
+.logo img {
+  max-height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav a {
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle .dot {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000000; /* Dark background for mobile nav */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Adjust link color for mobile */
+  nav a {
+    color: #ececec; /* Light color for links in mobile view */
+  }
+
+  nav a:hover {
+    color: #007BFF; /* Highlight color on hover */
+  }
+}
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  font-size: large;
+}
+
+.hero-content button {
+  margin: 10px;
+  background: transparent;
+  border-radius: transparent;
+  border: 2px solid black;
+  width: 50%;
+}
+
+button:hover {
+  background-color: #040303; /* Coral background on hover */
+  color: white; /* Text color turns white on hover */
+  border-color: #ffffff; /* Border stays the same color as the background */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  padding: 60px 20px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1500px;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  opacity: 0; /* Hidden by default */
+  transform: translateY(30px); /* Start off-screen */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+}
+
+.about.visible {
+  opacity: 1; /* Make visible when section is in view */
+  transform: translateY(0); /* Slide into position */
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.about h2:hover {
+  color: #76c7c0;
+}
+
+.about h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-top: 40px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.about h3:hover {
+  color: #76c7c0;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #fffcfc;
+  margin: 20px auto;
+  max-width: 900px;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.about p:hover {
+  color: #ffffff; /* Slight color change on hover for p */
+}
+
+.about .highlight {
+  font-weight: 600;
+  color: #76c7c0;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 10px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about h3 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* Partner Section */
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  transition: opacity 1s ease-out; /* Fade-in effect for partner section */
+  opacity: 0; /* Hidden by default */
+}
+
+.partner.visible {
+  opacity: 1; /* Make visible when section is in view */
+}
+
+.partner img {
+  width: 150px;
+  height: 150px;
+  border-radius: 0%;
+  object-fit: cover;
+  border: 4px solid #76c7c0;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.partner img:hover {
+  transform: scale(1.1); /* Slight zoom effect on image hover */
+}
+
+.partner h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.partner p {
+  font-size: 1rem;
+  color: #fffefe;
+  text-align: center;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.partner p strong {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@media (min-width: 1024px) {
+  /* For large screens, make partner section take full width */
+  .partner {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partner img {
+    margin-right: 30px;
+  }
+}
+
+/* Animation on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to visible sections */
+.about.visible,
+.partner.visible {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+
+/* Services Section Styling */
+.services {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(243, 243, 243, 0.1); /* Subtle shadow */
+}
+/* Services Section Styling */
+.services {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  border-radius: 0px;
+  box-shadow: 0 4px 15px rgba(243, 243, 243, 0.1); /* Subtle shadow */
+}
+/* Section Heading */
+.services h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fefefe;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1; /* Ensure heading is above the overlay */
+}
+
+/* Remove the white line */
+.services h2::after {
+  content: ''; /* No content, so no line */
+  display: none; /* Hide the line */
+}
+/* Black Overlay */
+.services h2::before {
+  content: ''; /* Create a pseudo-element to act as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; /* Black with full opacity */
+  z-index: -1; /* Place behind the heading */
+  border-radius: 10px; /* Optional: Round the corners */
+  opacity: 1;
+}
+
+/* Cards Container */
+.services-cards {
+  display: flex; /* Using flexbox for layout */
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: center; /* Center-align cards */
+  gap: 40px; /* Uniform gap between cards */
+  margin-top: 40px;
+  padding: 10px;
+}
+
+
+
+/* Hover Effect on Cards */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Individual Card Styling */
+.service-card {
+  background-color: transparent;
+  border:0;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth animation on hover */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Image Styling */
+.service-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Optional: rounded corners for image */
+}
+
+/* Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgb(0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Show overlay on hover */
+.service-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Card Title */
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Card Description */
+.service-card p.short-desc {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Long Description inside overlay */
+.service-card .long-desc {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Read More Button */
+.read-more-btn {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 10px;
+  background: transparent;
+}
+
+/* Hover effect for Read More Button */
+.read-more-btn:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Video Styling */
+.service-video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Card Title */
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 20px 0 10px;
+}
+
+/* Card Description */
+.service-card .short-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 20px 20px;
+}
+
+/* Overlay for Long Description */
+.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: top 0.3s ease;
+}
+
+.service-card:hover .overlay {
+  top: 0; /* Reveal overlay on hover */
+}
+
+/* Overlay Long Description */
+.overlay .long-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 0 0px;
+}
+
+/* Read More Button */
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  border: 2px solid white;
+}
+
+.read-more-btn:hover {
+  background-color: white;
+  border: black;
+}
+
+/* Animation for Card Appearance */
+.service-card.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
+}
+
+.service-card {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start position */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+/* Portfolio Section */
+.portfolio {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  padding: 60px 20px;
+  text-align: center;
+  color: #e0e0e0; /* Light text for readability */
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Portfolio Section */
+.portfolio {
+  background-color: #121212; /* Black background */
+  padding: 60px 20px;
+  text-align: center;
+  color: #e0e0e0; /* Light text for readability */
+}
+
+/* Styling for Images Inside Portfolio Cards */
+.portfolio-card img {
+  width: 100%; /* Full width of the card */
+  height: 250px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures image scales and crops properly */
+  border-radius: 4px; /* Slightly rounded corners for images */
+  margin-bottom: 10px; /* Space between image and text */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Container for Portfolio Cards */
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for the cards */
+  gap: 30px; /* Add a gap of 30px between cards */
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Portfolio Card Styling with Background Image */
+.portfolio-card {
+  background-size: cover; /* Ensure the image covers the entire card */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  border: 2px solid #333; /* Subtle border */
+  border-radius: 8px; /* Rounded corners for the card */
+  width: 350px; /* Card width */
+  height: 250px; /* Card height */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Add depth with shadow */
+  text-align: center;
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+  color: #ffffff; /* Ensure text remains readable */
+  display: flex; /* Enable flexbox for content positioning */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-end; /* Align content to the bottom */
+  padding: 10px; /* Add padding for text */
+}
+
+/* Card Hover Effects */
+.portfolio-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8); /* Enhanced shadow on hover */
+}
+
+/* Text Inside Card */
+.portfolio-card p {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+  padding: 10px;
+  border-radius: 4px; /* Rounded edges for text container */
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  }
+
+  .portfolio-card {
+    width: 90%; /* Adjust width for smaller screens */
+    height: 200px; /* Reduce height for smaller screens */
+  }
+}
+
+/* Cards Become Visible When Scrolled Down */
+.portfolio-card.visible {
+  opacity: 1; /* Make visible */
+  transform: translateY(0); /* Slide up to original position */
+}
+
+/* Card Hover Effects */
+.portfolio-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8); /* Enhanced shadow on hover */
+}
+
+.portfolio-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #ffffff; /* Teal color for headings */
+}
+
+.portfolio-card p {
+  font-size: 1rem;
+  color: #ffffff; /* Dimmed text for descriptions */
+  line-height: 1.5;
+  margin-bottom: 1px;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  }
+
+  .portfolio-card {
+    width: 90%; /* Adjust width on smaller screens */
+    height: 200px; /* Slightly smaller height on smaller screens */
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More compact layout */
+  }
+
+  .portfolio-card {
+    height: 200px; /* Slightly smaller height on smaller screens */
+  }
+}
+/* Introduction Section */
+.introduction {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  color: #e0e0e0; /* Light text color */
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow around the section */
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading for the Section */
+.introduction h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+margin-left: 50px;
+  color: #ffffff; /* Teal color for heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adding text shadow for a modern look */
+  animation: fadeIn 1s ease-out; /* Fade-in animation for heading */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container for the Team Members */
+.team-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack vertically for the profile switch */
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 350px; /* Set a reasonable width for the profile cards */
+  height: 500px; /* Set a reasonable height */
+  margin-top: 20px;
+}
+
+/* Team Member (Profile) */
+.team-member {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Deep shadow for the card */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  position: absolute; /* Ensure profiles stack on top of each other */
+  top: 0;
+  left: 0;
+  visibility: visible;
+}
+
+/* Initially hide the partner's profile */
+#partnerProfile {
+  visibility: hidden; /* Make the partner profile invisible initially */
+  opacity: 0; /* Hide it with zero opacity */
+}
+
+/* Team Member Image */
+.team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #000000; /* Border to make the image stand out */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect on Image */
+.team-member:hover .team-photo {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Deeper shadow on hover */
+}
+
+/* Team Member Name and Role */
+.team-member h3 {
+  font-size: 1.7rem;
+  color: #76c7c0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Role Styling */
+.role {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Bio Styling */
+.bio {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Toggle Button Styling */
+.toggle-btn {
+  background-color: transparent;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 115px;
+  /* Adjusting positioning of the button */
+  align-self: center; /* Center the button horizontally */
+  margin-bottom: 0; /* Adjust the bottom margin */
+  margin-left: 50px;
+}
+
+/* Change color on hover */
+.toggle-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .team-container {
+    flex-direction: column;
+    gap: 30px; /* Adjust gap between team members on smaller screens */
+  }
+
+  /* Center the h2 heading */
+  .introduction h2 {
+    font-size: 2.5rem; /* Optional: Adjust size for better mobile display */
+    margin: 0 auto; /* Center the heading */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  /* Adjust team member card size for mobile */
+  .team-member {
+    width: 280px;
+    padding: 35px;
+  }
+
+  .team-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Adjust the toggle button margin and positioning */
+  .toggle-btn {
+    margin-top: 155px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    align-self: center; /* Center the button horizontally */
+  }
+}
+
+
+/* Contact Section Styling */
+.contact {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  color: #e0e0e0; /* Light text color */
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for section */
+  position: relative;
+}
+
+/* Heading in Contact Section */
+.contact h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #ffffff; /* White color for heading */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Text shadow for modern look */
+  animation: fadeIn 1s ease-out; /* Fade-in animation for heading */
+}
+
+/* Input and textarea styling for mobile */
+.contact input, .contact textarea {
+  width: 100%; /* Ensure inputs take the full width of the container */
+  padding: 10px; /* Adjust padding to fit the text inside */
+  margin: 10px 0; /* Adjust margin between inputs */
+  box-sizing: border-box; /* Include padding and border in the total width/height */
+  font-size: 1rem; /* Adjust font size for better readability */
+  border: 1px solid #ddd; /* Light border for inputs */
+  border-radius: 5px; /* Rounded corners for input fields */
+}
+
+/* Placeholder styling */
+.contact ::placeholder {
+  color: #bbb; /* Lighter color for placeholder text */
+  font-size: 1rem; /* Adjust placeholder font size */
+  text-overflow: ellipsis; /* Handle overflow */
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  /* Adjust padding for contact section on mobile */
+  .contact {
+    padding: 40px 20px; /* Reduce padding for smaller screens */
+  }
+
+  /* Make the heading a bit smaller on mobile */
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Adjust form fields in the contact section */
+  .contact input, .contact textarea {
+    width: 100%; /* Ensure full-width for smaller screens */
+    padding: 12px; /* Increase padding for better touch targets */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  /* Ensure placeholders stay within bounds */
+  .contact ::placeholder {
+    color: #bbb; /* Placeholder color */
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+}
+
+
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7); /* Card-like shadow */
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #76c7c0; /* Border color on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(119, 199, 192, 0.7); /* Glow effect */
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  border: 2px solid black;
+}
+
+button:hover {
+  background-color: black; /* Darken on hover */
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 15px;
+  }
+
+  form {
+    padding: 30px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  input, textarea {
+    font-size: 1rem; /* Smaller font on mobile */
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 12px 22px;
+  }
+}
+
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.footer {
+  background: linear-gradient(135deg, #121212 50%, #333333 50%); /* Diagonal gradient background */
+  color: #fff;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(64, 63, 63, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.footer-left h2 {
+  color: #b4b4b4;
+  font-size: 36px; /* Increased */
+  margin-bottom: 20px;
+  margin-left: 180px;
+}
+
+.footer-left h2 .highlight {
+  color: #797877;
+}
+
+.footer-left h2 .highlight:hover{
+  color: #76c7c0;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 10px;
+  margin-left: 180px;
+}
+
+.footer-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px; /* Increased */
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #76c7c0;
+}
+
+.footer-center {
+  max-width: 300px;
+  max-height: 400px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 18px; /* Increased */
+  margin-bottom: 10px; /* Adjusted to increase the gap */
+  color: #717171;
+}
+
+.email-link {
+  color: #fffcfc;
+  text-decoration: none;
+  font-size: 16px; /* Increased */
+  transition: color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.email-link:hover {
+  color: #76c7c0; /* Changed hover color */
+}
+
+
+.footer-right .social-icons { 
+  display: flex; 
+  flex-direction: column; /* Change to vertical layout */ 
+  gap: 15px; 
+  margin-right: 180px;
+}
+
+.social-icons a { 
+  display: inline-flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  background: rgba(0, 0, 0, 0.2); 
+  color: #fff; 
+  font-size: 20px; 
+  transition: background 0.3s ease, transform 0.3s ease; 
+  text-decoration: none;
+}
+
+.social-icons a:hover { 
+  background: #76c7c0; 
+  transform: scale(1.1); 
+}
+
+.footer-bottom { 
+  text-align: center; 
+  margin-top: 30px; 
+  font-size: 16px; 
+  color: #ddd; 
+}
+
+.footer-bottom .highlight {
+  color: #bdb9ba;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-bottom .highlight:hover {
+  color: #76c7c0; /* Change to the desired hover color */
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) { /* Tablet and below */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left h2 {
+    margin-left: 0;
+    font-size: 28px; /* Adjusted for tablet */
+  }
+
+  .footer-menu li {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .footer-menu a {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+  }
+
+  .footer-center {
+    margin-right: 0;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-right .social-icons {
+    margin-right: 0;
+    flex-direction: row; /* Switch to horizontal layout on small screens */
+    justify-content: center;
+  }
+
+  .footer-right .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-bottom {
+    font-size: 14px; /* Reduced font size for small screens */
+    color: white;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile and below */
+  .footer-left h2 {
+    font-size: 34px; /* Adjusted for mobile */
+  }
+
+  .footer-menu li {
+    margin-bottom: 8px;
+  }
+
+  .footer-menu a {
+    font-size: 14px; /* Reduced font size for mobile */
+  }
+
+  .footer-center {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer-right .social-icons {
+    flex-direction: row; /* Horizontal layout on small mobile */
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .footer-right .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin: 0 8px;
+  }
+
+  .footer-bottom {
+    font-size: 12px; /* Reduced font size for mobile */
+    color: white;
+  }
+}
+
