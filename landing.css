@@ -1,0 +1,148 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Video Background */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Overlay Content */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Container for Heading and Cards */
+.container {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Heading */
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+/* Card Styles */
+.card {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 300px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid white;
+  margin: 20px;
+
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: aqua;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Button (Back to Home) */
+.puneet a.back-link {
+  display: inline-block;
+  margin-top: auto; /* Push button to the bottom */
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: 2px solid white;
+  text-align: center;
+  width: 100%; /* Make button fill the width of the card */
+}
+
+.puneet a.back-link:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container h1 {
+      font-size: 2rem;
+  }
+
+  .cards-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+      font-size: 1.5rem;
+  }
+
+  .card {
+      width: 90%;
+  }
+}
