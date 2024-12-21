@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Visiting Card Service</title>
+    <link rel="stylesheet" href="card.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="icon" href="media.png" type="image/png">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>AR Visiting Card Service</h1>
+    </header>
+
+    <!-- Introduction Section -->
+    <div class="intro">
+        <h2>Welcome to the Future of Networking!</h2>
+        <p>Our AR Visiting Card service allows you to create a stunning, interactive business card that can be scanned using augmented reality. Showcase your professional details in 3D, and make a lasting impression with potential clients or partners!</p>
+    </div>
+
+    <!-- AR Section -->
+    <div class="ar-section">
+        <h3>Experience the AR Visiting Card</h3>
+        <p>Scan the marker with your phone or webcam to view your interactive AR visiting card. Simply print the marker and use it to bring your details to life in the 3D world.</p>
+
+        <!-- AR.js + A-Frame Setup -->
+        <div class="ar-box">
+            <a-scene embedded arjs class="ar-scene">
+                <!-- Marker for AR -->
+                <a-marker preset="hiro">
+                    <!-- Your 3D object or visiting card content -->
+                    <a-box position="0 0.5 0" material="color: #4CC3D9; opacity: 0.8;"></a-box>
+                    <a-text value="Puneet Sharma" position="0 1.5 0" color="black" scale="5 5 5"></a-text>
+                    <a-text value="Full Stack Developer" position="0 1.2 0" color="black" scale="3 3 3"></a-text>
+                    <a-text value="puneet@example.com" position="0 0.9 0" color="black" scale="3 3 3"></a-text>
+                </a-marker>
+
+                <!-- Camera setup -->
+                <a-entity camera></a-entity>
+            </a-scene>
+        </div>
+    </div>
+
+</body>
+</html>

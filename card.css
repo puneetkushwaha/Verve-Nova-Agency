@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Header Section */
+header {
+    background-color: #4CC3D9;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+/* Introduction Section */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: transparent;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #000000;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* AR Section */
+.ar-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: transparent;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.ar-section h3 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.ar-section p {
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* AR Scene Box Styling */
+.ar-box {
+    width: 90%;
+    max-width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    border: 3px solid #4CC3D9;
+    border-radius: 12px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.ar-box:hover {
+    transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+/* Ensuring the AR scene fits inside the box */
+.ar-scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Ensuring the camera element fits properly */
+a-entity[camera] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .intro, .ar-section {
+        padding: 40px 20px;
+    }
+
+    .intro h2 {
+        font-size: 2em;
+    }
+
+    .ar-section h3 {
+        font-size: 2em;
+    }
+
+    .ar-box {
+        width: 100%;
+        height: 300px;
+    }
+}
